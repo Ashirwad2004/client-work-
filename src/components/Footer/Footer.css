@@ -1,0 +1,82 @@
+/* .footer-wrapper {
+    background-color: #000;
+}; */
+
+
+.footer-container {
+  background-color: #292727;
+  border-radius: 100px;
+  margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.footer-tag {
+  color: #ccc;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+}
+
+.footer-email {
+  font-size: 2rem;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.footer-description {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 1.5rem;
+}
+
+.footer-brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-links li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-links li:hover {
+  color: #999;
+}
+
+.footer-social-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-icons i {
+  font-size: 1.5rem;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-icons i:hover {
+  color: #fff;
+}
+
+.footer-logo {
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-copy {
+  color: #888;
+  font-size: 0.85rem;
+}

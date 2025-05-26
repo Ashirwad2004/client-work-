@@ -1,0 +1,23 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to right, #111 0%, #333 100%);
+  color: white;
+}
+
+.services-section h2,
+.work-section h2 {
+  font-weight: 700;
+}
+
+.work-card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.work-card img:hover {
+  transform: scale(1.05);
+}

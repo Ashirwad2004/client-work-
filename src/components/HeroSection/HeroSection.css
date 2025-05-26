@@ -1,0 +1,91 @@
+.custom-hero-wrapper {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.hero-container {
+  background-color: #f4f4f4;
+  border-radius: 100px;
+  width: 100%;
+  height: 90vh; /* Ensures space inside wrapper is filled */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.hero-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5rem;
+  font-weight: 900;
+  word-break: break-word;
+}
+
+.hero-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 992px) {
+  .custom-hero-wrapper {
+    height: auto;
+    padding: 10px;
+  }
+
+  .hero-container {
+    height: auto;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 30px 20px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .hero-img {
+    max-height: 250px;
+  }
+}
