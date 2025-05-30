@@ -15,9 +15,9 @@ function App() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <HeroSection />
-      {/* <Services /> */}
+      <Services />
       {/* <Work /> */}
       {/* <Gallery /> */}
       {/* <About /> */}
