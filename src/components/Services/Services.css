@@ -1,9 +1,9 @@
 .services-section {
   background-color: #0c0c0c;
   color: white;
-  padding: 100px 40px 140px;
+  padding: 100px 40px 100px;
   border-radius: 100px;
-  margin: 0 30px 100px;
+  margin: 0 30px 40px;
   overflow: hidden;
   text-align: center;
 }
@@ -16,36 +16,67 @@
 }
 
 .carousel-wrapper {
-  max-width: 400px;
+  max-width: 80%;
   height: 500px; /* Fixed height */
   margin: auto;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 1s ease-in-out;
   height: 100%;
 }
 
-.carousel-card {
+/* .carousel-track.no-transition {
+  transition: none;
+} */
+
+/* .carousel-card {
   min-width: 100%;
-  height: 100%; /* Force each card to full height */
+  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
+  overflow: hidden;
+} */
+
+.carousel-card {
+  min-width: 100%;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  overflow: hidden;
+  opacity: 0.7;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  transform: scale(1); /* default */
 }
 
+.carousel-card.prev {
+  transform: scale(0.85); /* shrink while exiting */
+  z-index: 0;
+  opacity: 0.5; /* fade out */
+}
+
+.carousel-card.active {
+  transform: scale(1); /* full size */
+  z-index: 1;
+  opacity: 1;
+}
 .service-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 30px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
 }
 
 /* Prevent size from shifting */
@@ -70,7 +101,7 @@
 
 /* Description */
 .service-description {
-  max-width: 700px;
+  max-width: 600px;
   margin: 24px auto 0;
   font-size: 16px;
   color: #cfcfcf;
@@ -83,7 +114,7 @@
   .services-section {
     padding: 60px 20px 80px;
     border-radius: 60px;
-    margin: 0 15px 80px;
+    margin: 0 15px 20px;
   }
 
   .services-title {

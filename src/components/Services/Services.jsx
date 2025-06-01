@@ -10,7 +10,7 @@ function Services() {
       id: '01',
       title: 'Strategy',
       image: service1,
-      desc: 'We craft digital experiences that elevate brands and engage audiences. Our services blend creativity with strategy, ensuring every design is not just visual but results-driven.',
+      desc: 'We craft digital experiences that elevate brands and engage audiences. Our strategic approach ensures every project aligns with your business goals.',
     },
     {
       id: '02',
@@ -27,14 +27,45 @@ function Services() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  // const extendedServices = [...services, services[0]];
+  // const [displayIndex, setDisplayIndex] = useState(0);
+  // const [isTransitioning, setIsTransitioning] = useState(true);
+
+
+
+  // const realIndex = displayIndex % services.length;
 
   // Auto-slide every 5s
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 2000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDisplayIndex((prev) => prev + 1);
+  //   }, 4000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (displayIndex === services.length) {
+  //     // Wait for transition to finish
+  //     const timeout = setTimeout(() => {
+  //       setIsTransitioning(false);         // disable transition
+  //       setDisplayIndex(0);                // jump back to real first
+  //     }, 600); // match your CSS transition time
+
+  //     return () => clearTimeout(timeout);
+  //   } else {
+  //     setIsTransitioning(true); // restore transition
+  //   }
+  // }, [displayIndex, services.length]);
+
+
 
   return (
 
@@ -46,12 +77,37 @@ function Services() {
           className="carousel-track"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {services.map((s, index) => (
+        {services.map((s, index) => (
             <div key={index} className="carousel-card">
               <img src={s.image} alt={s.title} className="service-img" />
             </div>
           ))}
+
+        {services.map((s, index) => {
+            let cardClass = "carousel-card";
+            if (index === activeIndex) cardClass += " active";
+            else if (index === activeIndex - 1 || (activeIndex === 0 && index === services.length - 1)) {
+              cardClass += " prev";
+            }
+
+            return (
+              <div key={index} className={cardClass}>
+                <img src={s.image} alt={s.title} className="service-img" />
+              </div>
+            );
+          })}
         </div>
+
+        {/* <div
+          className={`carousel-track ${!isTransitioning ? 'no-transition' : ''}`}
+          style={{ transform: `translateX(-${displayIndex * 100}%)` }}
+        >
+          {[...services, services[0]].map((s, index) => (
+            <div key={index} className="carousel-card">
+              <img src={s.image} alt={s.title} className="service-img" />
+            </div>
+          ))}
+        </div> */}
       </div>
 
       <div className="service-label mt-3">
@@ -59,7 +115,7 @@ function Services() {
       </div>
 
       <p className="service-description mt-4 px-4">
-        We craft digital experiences that elevate brands and engage audiences. Our services blend creativity with strategy, ensuring every design is not just visual but results-driven.
+        {services[activeIndex].desc}
       </p>
     </section>
   )
