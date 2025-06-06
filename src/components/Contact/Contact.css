@@ -71,7 +71,11 @@
 
 /* Responsive tweaks */
 @media (max-width: 992px) {
+  .contact-wrapper {
+    border-radius: 30px;
+  }
   .contact-title {
+    margin-top: 1rem;
     font-size: 3.5rem;
   }
 
@@ -80,8 +84,8 @@
   }
 
   .contact-form {
-    margin-top: 2rem;
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 

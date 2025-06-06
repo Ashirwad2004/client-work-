@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
-import heroImage from '../../assets/images/hero-image.png';
+import heroImage from '../../assets/images/home-imgv1.png';
 
 function HeroSection() {
   return (
@@ -13,7 +13,7 @@ function HeroSection() {
           </div>
 
           <div className="col-lg-4 col-md-12 text-center">
-            <img src={heroImage} alt="Hero" className="img-fluid rounded-4 hero-img" />
+            <img src={heroImage} alt="Hero" className="img-fluid hero-img" />
           </div>
 
           <div className="col-lg-4 col-md-6 text-md-start text-center">

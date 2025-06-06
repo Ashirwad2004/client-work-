@@ -22,9 +22,11 @@
 .profile-img {
   width: 55px;
   height: 55px;
-  border-radius: 16px;
+  border-radius: 100px;
   object-fit: cover;
   flex-shrink: 0;
+  /* transform: scale(1.5);
+  transition: transform 0.3s ease;   */
 }
 
 .nav-links {
