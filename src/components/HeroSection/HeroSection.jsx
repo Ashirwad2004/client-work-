@@ -9,17 +9,16 @@ function HeroSection() {
         <div className="row g-4 align-items-center">
           <div className="col-lg-4 col-md-6 text-md-start text-center">
             <h1 className="hero-title">CINEPTUAL</h1>
-            <p className="hero-subtitle">DESIGN STUDIO · AHMEDABAD</p>
+            <p className="hero-subtitle">You bring the moments. <br /> We bring the magic.</p>
           </div>
 
-          <div className="col-lg-4 col-md-12 text-center">
+          <div className="col-lg-4 col-md-12 text-start align-items-start">
             <img src={heroImage} alt="Hero" className="img-fluid hero-img" />
           </div>
 
           <div className="col-lg-4 col-md-6 text-md-start text-center">
             <p className="hero-description">
-              At Magnetto, we break boundaries to craft designs that stand out and deliver results.
-              We blend creativity with strategy, turning bold ideas into digital experiences that captivate and inspire.
+              At Cineptual, we break boundaries to transform the ordinary into extraordinary cinematography. We blend creativity with strategy to turn bold ideas into visual stories that delivers result.
             </p>
           </div>
         </div>

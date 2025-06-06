@@ -1,5 +1,5 @@
 .services-section {
-  background-color: #0c0c0c;
+  /* background-color: #ffffff; */
   color: white;
   padding: 100px 40px 100px;
   border-radius: 100px;
@@ -9,8 +9,11 @@
 }
 
 .services-title {
-  font-family: monospace;
+  /* font-family: monospace; */
+  font-family: "Inter", sans-serif;
+  color: black;
   font-size: 32px;
+  font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 40px;
 }
@@ -75,10 +78,10 @@
 
 .service-video {
   width: 100%;
-  height: 50%;
+  /* height: 50%; */
   object-fit: contain;
   border-radius: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
 }
 
 .service-video video {
@@ -90,14 +93,24 @@
 
 /* Service Label */
 .service-label {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: black;
-  font-family: monospace;
-  font-weight: bold;
+  background-color: #cfcfcf;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   padding: 8px 20px;
   border-radius: 999px;
   display: inline-block;
   margin-top: 24px;
+}
+
+/* Service Subheading */
+.service-subheading {
+  max-width: 600px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  color: #2c2b2b;
+  line-height: 1.6;
+  padding: 0 20px;
 }
 
 /* Description */
@@ -105,7 +118,7 @@
   max-width: 600px;
   margin: 24px auto 0;
   font-size: 16px;
-  color: #cfcfcf;
+  color: #504f4f;
   line-height: 1.6;
   padding: 0 20px;
 }
@@ -120,12 +133,14 @@
 
   .services-title {
     font-size: 24px;
+    margin-bottom: 0;
   }
 
   .carousel-wrapper {
-    height: 350px;
+    height: 250px;
     max-width: 300px;
   }
+
   .service-description {
     font-size: 14px;
   }

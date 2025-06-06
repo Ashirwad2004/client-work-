@@ -3,33 +3,45 @@ import './Services.css';
 import service1 from '../../assets/images/service1.png';
 import service2 from '../../assets/images/service2.png';
 import service3 from '../../assets/images/service3.png';
-import video1 from '../../assets/videos/food.mp4';
-import video2 from '../../assets/videos/product.mp4';
-import video3 from '../../assets/videos/shortfilm1.mp4';
+import video1 from '../../assets/videos/shortfilm1.mp4';
+import video2 from '../../assets/videos/food.mp4';
+import video3 from '../../assets/videos/product.mp4';
+import video4 from '../../assets/videos/mountain.mp4';
 
 function Services() {
   const services = [
     {
       id: '01',
-      title: 'Strategy',
+      title: 'Short Films',
+      subheading: 'Memories fade, Our films wont.',
       video: video1,
       // image: service1,
-      desc: 'We craft digital experiences that elevate brands and engage audiences. Our strategic approach ensures every project aligns with your business goals.',
+      desc: 'We don’t just record.We sculpt memories with emotion,tone and time.',
     },
     {
       id: '02',
-      title: 'Design',
+      title: 'Wedding',
+      subheading: 'Filming the silence between heart beats.',
       video: video2,
       // image: service2,
-      desc: 'Our design process combines aesthetics with usability, ensuring each interaction leaves a lasting impression.',
+      desc: 'Where every frame holds a feeling, not just a face.',
     },
     {
       id: '03',
-      title: 'Development',
+      title: 'Products',
+      subheading: 'Show it right, and it sells itself.',
       video: video3,
       // image: service3,
-      desc: 'From prototypes to final products, we turn ideas into fast, functional digital solutions.',
+      desc: 'Anything can be sold at desired price if we know how to present it.',
     },
+    {
+      id: '04',
+      title: 'Food',
+      subheading: 'Let them taste it visually.',
+      video: video4,
+      // image: service1,
+      desc: 'Crave-worthy content that makes mouths water and Brands grow.',
+    }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,10 +86,14 @@ function Services() {
       </div>
 
       <div className="service-label mt-3">
-        <span>{services[activeIndex].id}</span> {services[activeIndex].title}
+       {services[activeIndex].title}
       </div>
 
-      <p className="service-description mt-4 px-4">
+      <div className="service-subheading mt-3">
+       {services[activeIndex].subheading}
+      </div>
+
+      <p className="service-description mt-2 px-4">
         {services[activeIndex].desc}
       </p>
     </section>
