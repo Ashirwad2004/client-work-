@@ -32,10 +32,11 @@ function Footer() {
             <div className="col-md-4 mb-4">
               <p className="footer-social-title">Social Media</p>
               <div className="footer-icons d-flex gap-3">
-                <i className="bi bi-twitter-x"></i>
+                {/* <i className="bi bi-twitter-x"></i> */}
                 <i className="bi bi-instagram"></i>
                 <i className="bi bi-linkedin"></i>
                 <i className="bi bi-youtube"></i>
+                <i className="bi bi-whatsapp"></i>
               </div>
             </div>
           </div>

@@ -4,26 +4,28 @@
 
 
 .footer-container {
-  background-color: #292727;
+  background-color: #f4f4f4;
   border-radius: 100px;
   margin: 2.5%;
+  color: black;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .footer-tag {
-  color: #ccc;
+  color: black;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
 }
 
 .footer-email {
+  color: black;
   font-size: 2rem;
   font-weight: 700;
   word-break: break-word;
 }
 
 .footer-description {
-  color: #aaa;
+  color: black;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-top: 1rem;
@@ -32,12 +34,12 @@
 
 .footer-credit {
   font-size: 0.9rem;
-  color: #fff;
+  color: black;
   margin-top: 1.5rem;
 }
 
 .footer-brand {
-  color: #fff;
+  color: black;
   font-weight: bold;
 }
 
@@ -60,12 +62,12 @@
 
 .footer-icons i {
   font-size: 1.5rem;
-  color: #ccc;
+  color: black;
   transition: color 0.3s;
 }
 
 .footer-icons i:hover {
-  color: #fff;
+  color: black;
 }
 
 .footer-logo {

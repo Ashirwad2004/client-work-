@@ -54,10 +54,32 @@ function Services() {
     return () => clearInterval(interval);
   }, []);
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prev) => prev + 1);
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (activeIndex === services.length) {
+  //     const timeout = setTimeout(() => {
+  //       setActiveIndex(0);
+  //       document.querySelector('.carousel-track').style.transition = 'none';
+  //       document.querySelector('.carousel-track').style.transform = `translateX(0%)`;
+
+  //       // Trigger reflow to restart transition
+  //       void document.querySelector('.carousel-track').offsetWidth;
+  //       document.querySelector('.carousel-track').style.transition = 'transform 1s ease-in-out';
+  //     }, 1000);
+  //     return () => clearTimeout(timeout);
+  //   }
+  // }, [activeIndex, services.length]);
+
 
   return (
 
-    <section className="services-section text-center">
+    <section className="services-section text-center mt-1">
       <h2 className="services-title">SERVICES</h2>
 
       <div className="carousel-wrapper">
@@ -66,31 +88,42 @@ function Services() {
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
 
-        {services.map((s, index) => {
+          {services.map((s, index) => {
             let cardClass = "carousel-card";
             if (index === activeIndex) cardClass += " active";
             else if (index === activeIndex - 1 || (activeIndex === 0 && index === services.length - 1)) {
               cardClass += " prev";
             }
 
-            return (
+          return (
               <div key={index} className={cardClass}>
-                {/* <img src={s.image} alt={s.title} className="service-img" /> */}
-                <video className="service-video" autoPlay loop muted>
+          {/* <img src={s.image} alt={s.title} className="service-img" /> */}
+          <video className="service-video" autoPlay loop muted>
                   <source src={s.video} type="video/mp4"></source>
                 </video>
               </div>
             );
           })}
+
+          {/* {[...services, services[0]].map((s, index) => {
+            return (
+              <div key={index} className="carousel-card">
+                <video className="service-video" autoPlay loop muted>
+                  <source src={s.video} type="video/mp4"></source>
+                </video>
+              </div>
+            );
+          })} */}
+
         </div>
       </div>
 
       <div className="service-label mt-3">
-       {services[activeIndex].title}
+        {services[activeIndex].title}
       </div>
 
       <div className="service-subheading mt-3">
-       {services[activeIndex].subheading}
+        {services[activeIndex].subheading}
       </div>
 
       <p className="service-description mt-2 px-4">

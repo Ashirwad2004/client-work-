@@ -4,7 +4,8 @@
   margin: 2.5%;
   border-radius: 100px;
   overflow: hidden;
-  color: white;
+  background-color: #f4f4f4;
+  /* color: white; */
 }
 
 .bg-img {
@@ -13,11 +14,13 @@
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.3;
   object-fit: cover;
   z-index: 0;
 }
 
 .overlay {
+  background-color: #f4f4f4;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,32 +31,38 @@
 }
 
 .contact-title {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Inter", sans-serif;
+  color: black;
   font-size: 5rem;
+  font-weight: 400;
   line-height: 1.1;
   word-break: break-word;
 }
 
 .contact-description {
-  font-size: 1.1rem;
-  color: #ddd;
+  font-size: 1rem !important;
+  color: rgb(54, 54, 54);
   max-width: 500px;
   margin-top: 1rem;
 }
 
-.contact-form {
-  background: rgba(0, 0, 0, 0.4);
+.sub-heading {
+  color: rgb(54, 54, 54);
+}
+
+/* .contact-form {
+  background: rgba(83, 83, 83, 0.4);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: white;
+  color: rgb(72, 71, 71);
   padding: 2rem;
   border-radius: 30px;
   max-width: 600px;
   margin: 0 auto;
-}
+} */
 
 .contact-form input::placeholder {
-  color: #bbb;
+  color: rgb(91, 91, 91);
   font-weight: 400;
 }
 
@@ -66,7 +75,47 @@
 .contact-form input:focus {
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: white;
+  border-color: rgb(45, 44, 44);
+}
+
+.contact-form {
+  background: linear-gradient(135deg, rgb(7 8 5 / 5%) 0%, rgb(94 94 87 / 10%) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: white;
+  padding: 2rem;
+  border-radius: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* 
+.contact-form input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.contact-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+} */
+
+
+.form-button {
+  /* background-color: rgb(130, 129, 129); */
+  background: linear-gradient(135deg, rgb(7 8 5 / 5%) 0%, rgb(94 94 87 / 10%) 100%);
+  opacity: 1.1;
+  border: none;
+  color: rgb(88, 88, 88);
+
 }
 
 /* Responsive tweaks */
