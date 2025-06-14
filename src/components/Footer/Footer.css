@@ -19,7 +19,7 @@
 
 .footer-email {
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   word-break: break-word;
 }
@@ -59,8 +59,13 @@
 .footer-social-title {
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: end;
   margin-bottom: 1rem;
   color: black;
+}
+
+.footer-icons {
+ justify-content: end;
 }
 
 .footer-icons i {
@@ -90,5 +95,13 @@
 @media (max-width: 992px) {
   .footer-container{
     border-radius: 30px;
+  }
+
+  .footer-social-title{
+    text-align: center;
+  }
+
+  .footer-icons{
+    justify-content: center;
   }
 }
