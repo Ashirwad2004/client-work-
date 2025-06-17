@@ -150,7 +150,9 @@
   }
 
   .contact-form {
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
+    padding-bottom: 2rem;
+    margin-bottom: 6.5rem;
   }
 }
 

@@ -1,0 +1,41 @@
+.gallery-section {
+  background-color: #f4f4f4; /* Black background for cinematic feel */
+  height: 100vh; /* Full viewport height */
+}
+
+.gallery-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  /* border: 1px solid #333; */
+}
+
+.gallery-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.1);
+}
+
+.gallery-video {
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+/* Pause by default */
+.gallery-video {
+  pointer-events: none;
+}
+
+.gallery-card:hover .gallery-video {
+  pointer-events: auto;
+}
+
+/* Play video on hover */
+.gallery-card:hover .gallery-video {
+  filter: brightness(1.05);
+}
+
+.gallery-card:hover video {
+  /* Manually trigger play using JS */
+}

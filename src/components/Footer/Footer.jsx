@@ -40,7 +40,7 @@ function Footer() {
 
           <div className="text-center mt-4">
             {/* <h1 className="footer-logo">Cineptual</h1> */}
-            <p className="footer-copy mt-2">©2025 Cineptual. All rights reserved.</p>
+            <p className="footer-copy mb-5">©2025 Cineptual. All rights reserved.</p>
           </div>
         </div>
       </footer>

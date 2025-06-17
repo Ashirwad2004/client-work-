@@ -7,10 +7,10 @@ function HeroSection() {
     <section className="custom-hero-wrapper d-flex align-items-center justify-content-center">
       <div className="hero-container container-fluid">
         <div className="row g-4 align-items-center">
-          <div className="col-lg-4 col-md-6 text-md-start text-center">
+          <div className="col-lg-4 col-md-6 text-md-start first-section text-center">
             <h1 className="hero-title">CINEPTUAL</h1>
             <p className="hero-subtitle">You bring the moments. <br /> We bring the magic.</p>
-          </div>
+          </div>  
 
           <div className="col-lg-4 col-md-12 text-start align-items-start">
             <img src={heroImage} alt="Hero" className="img-fluid hero-img" />

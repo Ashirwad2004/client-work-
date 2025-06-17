@@ -7,8 +7,6 @@ function Contact() {
   return (
 
     <section className="contact-wrapper d-flex align-items-center justify-content-center text-white">
-      {/* <div className="overlay"></div> */}
-      {/* <img src={contactBg} alt="Background" className="bg-img" /> */}
 
       <div className="container position-relative z-2 px-4">
         <div className="row align-items-center min-vh-100">
@@ -22,7 +20,7 @@ function Contact() {
 
           {/* Right Form */}
           <div className="col-lg-6 mt-5 mt-lg-0">
-            <div className="contact-form p-4 p-md-5 rounded-5">
+            <div className="contact-form">
               <h6 className="text-uppercase small fw-bold mb-4 sub-heading">Tell us your Story...</h6>
               <div className="row g-3">
                 <div className="col-md-6">

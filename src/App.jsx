@@ -10,20 +10,32 @@ import Services from './components/Services/Services';
 import Work from './components/Work/Work';
 
 import "./main.css";
+import { Routes, Route } from 'react-router-dom';
+
+function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <Services />
+      <Contact />
+      <Footer />
+    </>
+  )
+}
 
 function App() {
 
   return (
-    <div>
+    <>
       <Navbar />
-      <HeroSection />
-      <Services />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
       {/* <Work /> */}
-      {/* <Gallery /> */}
+        <Route path="/projects" element={<Gallery />} />
+        {/* <Gallery /> */}
       {/* <About /> */}
-      <Contact />
-      <Footer />
-    </div>
+      </Routes>
+    </>
   )
 }
 

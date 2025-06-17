@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import logo from '../../assets/videos/Scaled_logo_without_txt_v2.mp4'; // Adjust the path as necessary
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -13,10 +14,13 @@ function Navbar() {
         </video>
 
         <nav className="nav-links d-flex flex-nowrap overflow-auto">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">About</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/projects" className="nav-link">Projects</Link>
+          <Link to="/journal" className="nav-link">Journal</Link>
+          {/* <a href="#" className="nav-link">About</a>
           <a href="#" className="nav-link">Projects</a>
-          <a href="#" className="nav-link">Journal</a>
+          <a href="#" className="nav-link">Journal</a> */} 
         </nav>
 
         <button className="btn contact-btn ms-3">Contact</button>
