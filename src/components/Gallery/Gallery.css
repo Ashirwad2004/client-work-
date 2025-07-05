@@ -1,6 +1,8 @@
 .gallery-section {
   background-color: #f4f4f4; /* Black background for cinematic feel */
-  height: 100vh; /* Full viewport height */
+  /* height: 100vh; Full viewport height */
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .gallery-card {
@@ -36,6 +38,3 @@
   filter: brightness(1.05);
 }
 
-.gallery-card:hover video {
-  /* Manually trigger play using JS */
-}

@@ -17,7 +17,7 @@
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 600;
   word-break: break-word;
 }
@@ -34,13 +34,15 @@
   line-height: 1.6;
   max-width: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero-img {
-  height: 700px;
+  /* height: 700px; */
   width: 100%;
   object-fit: cover;
   transform: scale(1);
+  aspect-ratio: 3/4;
   /* transition: transform 0.3s ease-in-out; */
   /* border-radius: 30px; */
 }
@@ -68,10 +70,13 @@
 
   .hero-img {
     /* max-height: 300px; */
-    width: auto;
-    max-height: 90vh;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
     object-fit: contain;
     object-position: center;
+    margin: auto;
+    display: block;
   }
 }
 
@@ -82,7 +87,8 @@
   }
 
   .first-section {
-    /* align-items: center; */
+    align-items: center;
+    text-align: center;
     margin: auto;
     margin-top: 1rem;
   }

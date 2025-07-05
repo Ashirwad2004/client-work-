@@ -4,10 +4,10 @@ import heroImage from '../../assets/images/home-imgv1.png';
 
 function HeroSection() {
   return (
-    <section className="custom-hero-wrapper d-flex align-items-center justify-content-center">
+    <section className="custom-hero-wrapper">
       <div className="hero-container container-fluid">
-        <div className="row g-4 align-items-center">
-          <div className="col-lg-4 col-md-6 text-md-start first-section text-center">
+        <div className="row g-4 d-flex justify-content-center align-items-center">
+          <div className="col-lg-4 col-md-6 first-section text-center">
             <h1 className="hero-title">CINEPTUAL</h1>
             <p className="hero-subtitle">You bring the moments. <br /> We bring the magic.</p>
           </div>  

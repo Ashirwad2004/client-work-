@@ -1,0 +1,78 @@
+body {
+  overflow-x: hidden;
+}
+
+.about-container {
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  color: #222;
+}
+
+.about-container .lead {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 40px 10px;
+}
+
+.about-image {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: auto;
+}
+
+.about-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-line;
+}
+
+.text-content-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-section h2 {
+    text-align: center;
+  }
+
+  .about-section p {
+    text-align: center;
+  }
+}

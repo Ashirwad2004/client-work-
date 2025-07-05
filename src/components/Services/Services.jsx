@@ -1,116 +1,3 @@
-// import React, { useState, useEffect, useRef } from 'react';
-// import './Services.css';
-// import service1 from '../../assets/images/service1.png';
-// import service2 from '../../assets/images/service2.png';
-// import service3 from '../../assets/images/service3.png';
-// import video1 from '../../assets/videos/shortfilm1.mp4';
-// import video2 from '../../assets/videos/food.mp4';
-// import video3 from '../../assets/videos/product.mp4';
-// import video4 from '../../assets/videos/mountain.mp4';
-
-// function Services() {
-//   const services = [
-//     {
-//       id: '01',
-//       title: 'Short Films',
-//       subheading: 'Memories fade, Our films wont.',
-//       video: video1,
-//       // image: service1,
-//       desc: 'We don’t just record.We sculpt memories with emotion,tone and time.',
-//     },
-//     {
-//       id: '02',
-//       title: 'Wedding',
-//       subheading: 'Filming the silence between heart beats.',
-//       video: video2,
-//       // image: service2,
-//       desc: 'Where every frame holds a feeling, not just a face.',
-//     },
-//     {
-//       id: '03',
-//       title: 'Products',
-//       subheading: 'Show it right, and it sells itself.',
-//       video: video3,
-//       // image: service3,
-//       desc: 'Anything can be sold at desired price if we know how to present it.',
-//     },
-//     {
-//       id: '04',
-//       title: 'Food',
-//       subheading: 'Let them taste it visually.',
-//       video: video4,
-//       // image: service1,
-//       desc: 'Crave-worthy content that makes mouths water and Brands grow.',
-//     }
-//   ];
-
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   // Auto-slide every 5s
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveIndex((prev) => (prev + 1) % services.length);
-//     }, 8000);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-
-//     <section className="services-section text-center mt-1">
-//       <h2 className="services-title">SERVICES</h2>
-//       <div className="carousel-wrapper">
-//         {/* <button className="carousel-arrow left"
-//           onClick={() =>
-//     setActiveIndex((prev) => (prev - 1 + services.length) % services.length)
-//   }
-//         > ‹ </button> */}
-//         <div
-//           className="carousel-track"
-//           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-//         >
-
-//           {services.map((s, index) => {
-//             let cardClass = "carousel-card";
-//             if (index === activeIndex) cardClass += " active";
-//             else if (index === activeIndex - 1 || (activeIndex === 0 && index === services.length - 1)) {
-//               cardClass += " prev";
-//             }
-
-//             return (
-//               <div key={index} className={cardClass}>
-//                 <video className="service-video" autoPlay loop muted>
-//                   <source src={s.video} type="video/mp4"></source>
-//                 </video>
-//               </div>
-//             );
-//           })}
-
-//         </div>
-//         {/* <button className="nav-arrow right"
-//         onClick={() =>
-//     setActiveIndex((prev) => (prev + 1) % services.length)
-//   }
-//         > › </button> */}
-//       </div>
-
-//       <div className="service-label mt-3">
-//         {services[activeIndex].title}
-//       </div>
-
-//       <div className="service-subheading mt-3">
-//         {services[activeIndex].subheading}
-//       </div>
-
-//       <p className="service-description mt-2 px-4">
-//         {services[activeIndex].desc}
-//       </p>
-//     </section>
-//   )
-
-// };
-
-// export default Services;
-
 import React, { useState, useEffect, useRef } from 'react';
 import './Services.css';
 import shortfilm from '../../assets/videos/shortfilm1.mp4';
@@ -123,36 +10,47 @@ import mountain from '../../assets/videos/mountain.mp4';
 function Services() {
   const services = [
     {
+      id: '01',
       file: shortfilm,
-      name: 'Short Film',
-      description: 'Memories fade, Our films won\'t. We don\'t just record. We sculpt memories with emotion, tone, and time.'
+      title: 'Short Films',
+      subheading: 'Memories fade, Our films won\'t.',
+      desc: 'We don’t just record.We sculpt memories with emotion,tone and time.'
     },
     {
+      id: '02',
       file: wedding,
-      name: 'Wedding',
-      description: 'Filming the silence between heartbeats. Where every frame holds a feeling, not just a face.'
+      title: 'Wedding',
+      subheading: 'Filming the silence between heart beats.',
+      desc: 'Where every frame holds a feeling, not just a face.'
     },
     {
-      file: food,
-      name: 'Food',
-      description: 'Let them taste it visually. Crave-worthy content that makes mouths water and brands grow.'
-    },
-    {
+      id: '03',
       file: product,
-      name: 'Product',
-      description: 'Show it right, and it sells itself. Anything can be sold at the desired price if we know how to present it.'
+      title: 'Products',
+      subheading: 'Show it right, and it sells itself.',
+      desc: 'Anything can be sold at desired price if we know how to present it.',
     },
     {
+      id: '04',
+      file: food,
+      title: 'Food',
+      subheading: 'Let them taste it visually.',
+      desc: 'Crave-worthy content that makes mouths water and Brands grow.',
+    },
+    {
+      id: '05',
       file: mountain,
-      name: 'Landscape',
-      description: 'Elevate the soul through serene visuals. Where nature\'s majesty meets cinematic grace.'
+      title: 'Documentary',
+      subheading: 'Turning facts into timeless cinema.',
+      desc: 'We blend raw reality with refined storytelling to make sure every moment means something.'
     }
   ];
-  
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const serviceNameRef = useRef(null);
+  const serviceTitleRef = useRef(null);
+  const serviceSubheadingRef = useRef(null);
   const serviceDescRef = useRef(null);
   const trackRef = useRef(null);
   const [touchStart, setTouchStart] = useState(0);
@@ -161,18 +59,20 @@ function Services() {
   const updateCarousel = (newIndex) => {
     if (isAnimating) return;
     setIsAnimating(true);
-    
+
     const index = (newIndex + services.length) % services.length;
     setCurrentIndex(index);
-    
+
     // Animate info text
-    if (serviceNameRef.current && serviceDescRef.current) {
-      serviceNameRef.current.style.opacity = '0';
+    if (serviceTitleRef.current && serviceDescRef.current && serviceSubheadingRef.current) {
+      serviceTitleRef.current.style.opacity = '0';
       serviceDescRef.current.style.opacity = '0';
-      
+      serviceSubheadingRef.current.style.opacity = '0';
+
       setTimeout(() => {
-        serviceNameRef.current.style.opacity = '1';
+        serviceTitleRef.current.style.opacity = '1';
         serviceDescRef.current.style.opacity = '1';
+        serviceSubheadingRef.current.style.opacity = '1';
       }, 300);
     }
 
@@ -185,7 +85,7 @@ function Services() {
       if (e.key === 'ArrowRight') updateCarousel(currentIndex + 1);
       if (e.key === 'ArrowLeft') updateCarousel(currentIndex - 1);
     };
-    
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentIndex]);
@@ -211,30 +111,21 @@ function Services() {
     }
   };
 
-  // Auto-advance (optional)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      updateCarousel(currentIndex + 1);
-    }, 5000);
-    
-    return () => clearInterval(timer);
-  }, [currentIndex]);
-
   return (
     <section className="services-section">
       <h1 className="services-title">SERVICES</h1>
-      
+
       <div className="services-carousel">
-        <button 
-          className="nav-arrow left" 
+        <button
+          className="nav-arrow left"
           onClick={() => updateCarousel(currentIndex - 1)}
           aria-label="Previous service"
         >
           ‹
         </button>
-        
-        <div 
-          className="carousel-track" 
+
+        <div
+          className="carousel-track"
           ref={trackRef}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -242,7 +133,7 @@ function Services() {
         >
           {services.map((service, index) => {
             const offset = (index - currentIndex + services.length) % services.length;
-            
+
             let cardClass = 'service-card';
             if (offset === 0) cardClass += ' center';
             else if (offset === 1) cardClass += ' right-1';
@@ -250,18 +141,18 @@ function Services() {
             else if (offset === services.length - 1) cardClass += ' left-1';
             else if (offset === services.length - 2) cardClass += ' left-2';
             else cardClass += ' hidden';
-            
+
             return (
-              <div 
+              <div
                 key={index}
                 className={cardClass}
                 onClick={() => updateCarousel(index)}
               >
-                <video 
-                  src={service.file} 
-                  muted 
-                  autoPlay 
-                  loop 
+                <video
+                  src={service.file}
+                  muted
+                  autoPlay
+                  loop
                   playsInline
                   aria-hidden="true"
                 />
@@ -269,25 +160,30 @@ function Services() {
             );
           })}
         </div>
-        
-        <button 
-          className="nav-arrow right" 
+
+        <button
+          className="nav-arrow right"
           onClick={() => updateCarousel(currentIndex + 1)}
           aria-label="Next service"
         >
           ›
         </button>
       </div>
-      
+
+
+
       <div className="service-info">
-        <h2 className="service-name" ref={serviceNameRef}>
-          {services[currentIndex].name}
-        </h2>
+        <div className="service-name" ref={serviceTitleRef}>
+          {services[currentIndex].title}
+        </div>
+        <div ref={serviceSubheadingRef} className="service-subheading">
+          {services[currentIndex].subheading}
+        </div>
         <p className="service-description" ref={serviceDescRef}>
-          {services[currentIndex].description}
+          {services[currentIndex].desc}
         </p>
       </div>
-      
+
       {/* <div className="dots-container">
         {services.map((_, index) => (
           <button

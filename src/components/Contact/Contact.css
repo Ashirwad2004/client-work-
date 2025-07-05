@@ -1,11 +1,15 @@
 .contact-wrapper {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   margin: 2.5%;
   border-radius: 100px;
   overflow: hidden;
   background-color: #f4f4f4;
   /* color: white; */
+}
+
+.left-content {
+  margin: 0 auto;
 }
 
 .bg-img {
@@ -33,7 +37,7 @@
 .contact-title {
   font-family: "Inter", sans-serif;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 400;
   line-height: 1.1;
   word-break: break-word;
@@ -43,6 +47,7 @@
   font-size: 1rem !important;
   color: rgb(54, 54, 54);
   max-width: 500px;
+  /* text-align: center; */
   margin-top: 1rem;
 }
 
@@ -121,15 +126,19 @@
 /* Responsive tweaks */
 @media (max-width: 992px) {
   .contact-wrapper {
+    /* min-height: fit-content; */
     border-radius: 30px;
   }
   .contact-title {
     margin-top: 1rem;
     font-size: 3.5rem;
+    text-align: center;
   }
 
   .contact-description {
     font-size: 1rem;
+    max-width: 100%;
+    text-align: center;
   }
 
   .contact-form {
@@ -139,6 +148,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact-wrapper{
+    height: 80vh;
+  }
+  
   .contact-title {
     font-size: 3rem;
     text-align: center;
@@ -151,17 +164,24 @@
 
   .contact-form {
     /* padding: 1.25rem; */
+    margin-top: 10rem;
     padding-bottom: 2rem;
-    margin-bottom: 6.5rem;
+    /* margin-bottom: 6.5rem; */
   }
 }
 
 @media (max-width: 576px) {
+  .contact-wrapper{
+    min-height: 100vh;
+  }
+
   .contact-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    padding-top: 6rem;
   }
 
   .contact-form {
+    margin-top: 1rem;
     padding: 1rem;
     border-radius: 20px;
   }

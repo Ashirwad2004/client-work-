@@ -6,12 +6,12 @@ import contactBg from '../../assets/images/contactus-bg.png';
 function Contact() {
   return (
 
-    <section className="contact-wrapper d-flex align-items-center justify-content-center text-white">
+    <section className="contact-wrapper d-flex justify-content-center align-items-center text-white">
 
       <div className="container position-relative z-2 px-4">
-        <div className="row align-items-center min-vh-100">
+        <div className="row">
           {/* Left Content */}
-          <div className="col-lg-6 text-start">
+          <div className="left-content col-lg-6 text-start">
             <h1 className="display-1 contact-title">LET'S MAKE MAGIC TOGETHER</h1>
             <p className="mt-4 contact-description">
               Whether you're looking to bring your brand to life, capture the magic of your wedding day, tell a compelling story through short films, or showcase your culinary creations. We're here to help.
@@ -19,7 +19,7 @@ function Contact() {
           </div>
 
           {/* Right Form */}
-          <div className="col-lg-6 mt-5 mt-lg-0">
+          <div className="col-lg-6">
             <div className="contact-form">
               <h6 className="text-uppercase small fw-bold mb-4 sub-heading">Tell us your Story...</h6>
               <div className="row g-3">
