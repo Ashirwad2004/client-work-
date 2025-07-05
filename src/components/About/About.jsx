@@ -1,11 +1,8 @@
-import React from 'react';
 import "./About.css";
-import { FaHeadphonesAlt, FaFlask, FaRobot, FaHandshake } from 'react-icons/fa';
 import aboutUs from '../../assets/images/about-us-2.jpg'; // Assuming you have an image in this path
 import aboutUsPromise from '../../assets/images/about-us-promise.jpg'; // Assuming you have an image in this path
 import aboutUsWhyTrustUs from '../../assets/images/about-us-why-trust.jpg'; // Assuming you have an image in this path
 import aboutUsExcitingPeople from '../../assets/images/about-us-exciting-people.jpg'; // Assuming you have an image in this path
-import aboutUsHeadImage from '../../assets/images/about-us.jpg'; // Assuming you have an image in this path
 
 function About() {
   const sections = [
