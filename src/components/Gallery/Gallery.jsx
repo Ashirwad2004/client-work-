@@ -7,7 +7,8 @@ import video3 from '../../assets/videos/product.mp4';
 import video4 from '../../assets/videos/mountain.mp4';
 import video5 from '../../assets/videos/jungle.mp4';
 import video6 from '../../assets/videos/sea.mp4';
-import video7 from '../../assets/videos/sea.mp4';
+import video7 from '../../assets/videos/birds.mp4';
+import video8 from '../../assets/videos/shortfilm2.mp4';
 
 
 const mediaItems = [
@@ -18,6 +19,7 @@ const mediaItems = [
   { src: video5 },
   { src: video6 },
   { src: video7 },
+  { src: video8 },
 ];
 
 const Gallery = () => {

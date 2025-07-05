@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Services.css';
 import shortfilm from '../../assets/videos/shortfilm1.mp4';
-import wedding from '../../assets/videos/birds.mp4';
+import wedding from '../../assets/videos/wedding.mp4';
 import food from '../../assets/videos/food.mp4';
-import product from '../../assets/videos/shortfilm2.mp4';
-import mountain from '../../assets/videos/mountain.mp4';
+import product from '../../assets/videos/product.mp4';
+import documentary from '../../assets/videos/documentary.mp4';
 
 
 function Services() {
@@ -39,7 +39,7 @@ function Services() {
     },
     {
       id: '05',
-      file: mountain,
+      file: documentary,
       title: 'Documentary',
       subheading: 'Turning facts into timeless cinema.',
       desc: 'We blend raw reality with refined storytelling to make sure every moment means something.'

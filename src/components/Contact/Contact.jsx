@@ -1,6 +1,4 @@
-import React from 'react';
 import "./Contact.css";
-import contactBg from '../../assets/images/contactus-bg.png';
 
 
 function Contact() {
