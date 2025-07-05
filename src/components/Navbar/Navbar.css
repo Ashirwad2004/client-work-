@@ -99,6 +99,7 @@
   .profile-img-inner {
     width: 90%;  /* Reduce zoom level slightly */
     height: 90%;
+    border-radius: 100px;
   }
 
   .contact-btn {
