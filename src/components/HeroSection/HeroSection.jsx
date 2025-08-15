@@ -9,7 +9,7 @@ function HeroSection() {
         <div className="row g-4 d-flex justify-content-center align-items-center">
           <div className="col-lg-4 col-md-6 first-section text-center">
             <h1 className="hero-title">CINEPTUAL</h1>
-            <p className="hero-subtitle">You bring the moments. <br /> We bring the magic.</p>
+            <p className="hero-subtitle">From Unseen to Scene.</p>
           </div>  
 
           <div className="col-lg-4 col-md-12 text-start align-items-start">

@@ -6,11 +6,13 @@ import Gallery from './components/Gallery/Gallery';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Pricing from './components/Pricing/Pricing';
 import Services from './components/Services/Services';
 import ScrollToTop from './ScrollToTop';
 
 import "./main.css";
 import { Routes, Route } from 'react-router-dom';
+import ReviewSection from './components/Review/ReviewSection';
 
 function HomePage() {
   return (
@@ -21,6 +23,7 @@ function HomePage() {
       <section id="services">
         <Services />
       </section>
+      <ReviewSection />
       <section id="contact">
         <Contact />
       </section>
@@ -38,10 +41,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-      {/* <Work /> */}
         <Route path="/projects" element={<Gallery />} />
-        {/* <Gallery /> */}
-      {/* <About /> */}
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
     </>
   )

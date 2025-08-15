@@ -19,10 +19,10 @@ function Footer() {
 
             <div className="col-md-4 mb-4">
               <ul className="list-unstyled footer-links align-items-left text-center">
-                <li>Home</li>
-                <li>About</li>
-                <li>Projects</li>
-                <li>Contact Us</li>
+                <Link to="/#home" className="nav-link"><li>Home</li></Link>
+                <Link to="/about" className="nav-link"><li>About</li></Link>
+                <Link to="/projects" className="nav-link"><li>Projects</li></Link>
+                <Link to="/#contact" className="nav-link"><li>Contact Us</li></Link>
               </ul>
             </div>
 

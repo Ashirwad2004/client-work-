@@ -110,4 +110,8 @@
   .footer-email {
     font-size: 1rem;
   }
+
+  .footer-container {
+    text-align: center;
+  }
 }

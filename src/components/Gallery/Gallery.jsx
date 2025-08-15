@@ -1,25 +1,9 @@
 import { useEffect } from 'react';
 import './Gallery.css';
 
-import video1 from '../../assets/videos/shortfilm1.mp4';
-import video2 from '../../assets/videos/food.mp4';
-import video3 from '../../assets/videos/product.mp4';
-import video4 from '../../assets/videos/mountain.mp4';
-import video5 from '../../assets/videos/jungle.mp4';
-import video6 from '../../assets/videos/sea.mp4';
-import video7 from '../../assets/videos/birds.mp4';
-import video8 from '../../assets/videos/shortfilm2.mp4';
-
-
 const mediaItems = [
-  { src: video1 },
-  { src: video2 },
-  { src: video3 },
-  { src: video4 },
-  { src: video5 },
-  { src: video6 },
-  { src: video7 },
-  { src: video8 },
+  { videoID: 'c-OhJTI-k68' },
+  { videoID: '271y_tf91FQ' },
 ];
 
 const Gallery = () => {
@@ -50,18 +34,33 @@ const Gallery = () => {
   return (
     <section className="gallery-section py-5 px-3 px-md-5">
       <div className="container-fluid">
-        <h2 className="text-center mb-5 fw-bold">Our Projects</h2>
+        <h2 className="text-center mb-5 fw-bold heading">Our Projects</h2>
         <div className="row g-4">
           {mediaItems.map((item, index) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-4">
               <div className="gallery-card shadow rounded-4 overflow-hidden">
-                <video
+                {/* <video
                   src={item.src}
                   loop
                   muted
                   playsInline
                   className="w-100 h-100 gallery-video"
-                />
+                /> */}
+
+                <a href={`https://www.youtube.com/watch?v=${item.videoID}`} target="_blank">
+                  <img src={`https://img.youtube.com/vi/${item.videoID}/maxresdefault.jpg`}
+                    alt="Video Title" className="youtube-thumbnail" />
+                </a>
+
+{/*                <iframe width="560" height="315"
+                  src={`https://www.youtube.com/embed/${item.videoID}`}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe> */}
+
+
               </div>
             </div>
           ))}

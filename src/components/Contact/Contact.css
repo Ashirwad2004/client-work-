@@ -55,16 +55,9 @@
   color: rgb(54, 54, 54);
 }
 
-/* .contact-form {
-  background: rgba(83, 83, 83, 0.4);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgb(72, 71, 71);
-  padding: 2rem;
-  border-radius: 30px;
-  max-width: 600px;
-  margin: 0 auto;
-} */
+.date-label {
+  color: rgb(91, 91, 91);
+}
 
 .contact-form input::placeholder {
   color: rgb(91, 91, 91);
@@ -74,7 +67,7 @@
 .contact-form input {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  /* color: white; */
 }
 
 .contact-form input:focus {
@@ -95,23 +88,6 @@
   max-width: 600px;
   margin: 0 auto;
 }
-/* 
-.contact-form input {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.contact-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.contact-form input:focus {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
-} */
 
 
 .form-button {
@@ -122,6 +98,50 @@
   color: rgb(88, 88, 88);
 
 }
+
+.custom-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #00b894, #00cec9);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  animation: slideUpFade 0.6s ease forwards;
+}
+
+.custom-toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.custom-toast .checkmark {
+  background: white;
+  color: #00b894;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 992px) {
@@ -148,6 +168,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact-text{
+    display: none;
+  }
+
   .contact-wrapper{
     height: 80vh;
   }
@@ -183,6 +207,7 @@
   .contact-form {
     margin-top: 1rem;
     padding: 1rem;
+    margin-bottom: 5rem;
     border-radius: 20px;
   }
 

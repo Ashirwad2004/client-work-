@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Services.css';
-import shortfilm from '../../assets/videos/shortfilm1.mp4';
+import shortfilm from '../../assets/videos/shortfilm.mp4';
 import wedding from '../../assets/videos/wedding.mp4';
-import food from '../../assets/videos/food.mp4';
+import food from '../../assets/videos/foodProduct.mp4';
 import product from '../../assets/videos/product.mp4';
 import documentary from '../../assets/videos/documentary.mp4';
 
@@ -21,7 +21,8 @@ function Services() {
       file: wedding,
       title: 'Wedding',
       subheading: 'Filming the silence between heart beats.',
-      desc: 'Where every frame holds a feeling, not just a face.'
+      desc: 'Where every frame holds a feeling, not just a face.',
+      comingSoon: true
     },
     {
       id: '03',
@@ -29,6 +30,7 @@ function Services() {
       title: 'Products',
       subheading: 'Show it right, and it sells itself.',
       desc: 'Anything can be sold at desired price if we know how to present it.',
+      comingSoon: true
     },
     {
       id: '04',
@@ -42,7 +44,8 @@ function Services() {
       file: documentary,
       title: 'Documentary',
       subheading: 'Turning facts into timeless cinema.',
-      desc: 'We blend raw reality with refined storytelling to make sure every moment means something.'
+      desc: 'We blend raw reality with refined storytelling to make sure every moment means something.',
+      comingSoon: true
     }
   ];
 
@@ -148,14 +151,30 @@ function Services() {
                 className={cardClass}
                 onClick={() => updateCarousel(index)}
               >
-                <video
+                {/* <video
                   src={service.file}
                   muted
                   autoPlay
                   loop
                   playsInline
                   aria-hidden="true"
-                />
+                /> */}
+
+                <div className="video-wrapper">
+                  <video
+                    src={service.file}
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    aria-hidden="true"
+                    className={service.comingSoon ? "blurred-video" : ""}
+                  />
+                  {service.comingSoon && (
+                    <div className="coming-soon-overlay">Coming Soon</div>
+                  )}
+                </div>
+
               </div>
             );
           })}
@@ -183,17 +202,6 @@ function Services() {
           {services[currentIndex].desc}
         </p>
       </div>
-
-      {/* <div className="dots-container">
-        {services.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => updateCarousel(index)}
-            aria-label={`Go to service ${index + 1}`}
-          />
-        ))}
-      </div> */}
     </section>
   );
 }

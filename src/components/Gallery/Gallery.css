@@ -1,3 +1,7 @@
+.heading {
+  font-size: 3rem;
+}
+
 .gallery-section {
   background-color: #f4f4f4; /* Black background for cinematic feel */
   /* height: 100vh; Full viewport height */
@@ -38,3 +42,10 @@
   filter: brightness(1.05);
 }
 
+.youtube-thumbnail {
+  width: 100%;       /* Fills available container width */
+  height: auto;      /* Keeps aspect ratio */
+  max-width: 560px;  /* Optional: limit size on large screens */
+  display: block;    /* Removes small gaps below image */
+  border-radius: 8px; /* Optional: rounded corners */
+}
