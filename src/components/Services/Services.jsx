@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Services.css';
 import shortfilm from '../../assets/videos/shortfilm.mp4';
 import wedding from '../../assets/videos/wedding.mp4';
@@ -52,35 +52,61 @@ function Services() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const serviceTitleRef = useRef(null);
   const serviceSubheadingRef = useRef(null);
   const serviceDescRef = useRef(null);
   const trackRef = useRef(null);
+  const sectionRef = useRef(null);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  const updateCarousel = (newIndex) => {
+  // Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const updateCarousel = useCallback((newIndex) => {
     if (isAnimating) return;
     setIsAnimating(true);
 
     const index = (newIndex + services.length) % services.length;
     setCurrentIndex(index);
 
-    // Animate info text
+    // Animate info text with better performance
     if (serviceTitleRef.current && serviceDescRef.current && serviceSubheadingRef.current) {
-      serviceTitleRef.current.style.opacity = '0';
-      serviceDescRef.current.style.opacity = '0';
-      serviceSubheadingRef.current.style.opacity = '0';
+      const elements = [serviceTitleRef.current, serviceDescRef.current, serviceSubheadingRef.current];
+      
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+      });
 
-      setTimeout(() => {
-        serviceTitleRef.current.style.opacity = '1';
-        serviceDescRef.current.style.opacity = '1';
-        serviceSubheadingRef.current.style.opacity = '1';
-      }, 300);
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          elements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          });
+        }, 150);
+      });
     }
 
-    setTimeout(() => setIsAnimating(false), 800);
-  };
+    setTimeout(() => setIsAnimating(false), 600);
+  }, [isAnimating, services.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -115,16 +141,19 @@ function Services() {
   };
 
   return (
-    <section className="services-section">
-      <h1 className="services-title">SERVICES</h1>
+    <section className="services-section" ref={sectionRef}>
+      <h1 className={`services-title ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        SERVICES
+      </h1>
 
       <div className="services-carousel">
         <button
           className="nav-arrow left"
           onClick={() => updateCarousel(currentIndex - 1)}
           aria-label="Previous service"
+          disabled={isAnimating}
         >
-          ‹
+          <span className="arrow-icon">‹</span>
         </button>
 
         <div
@@ -150,16 +179,11 @@ function Services() {
                 key={index}
                 className={cardClass}
                 onClick={() => updateCarousel(index)}
+                style={{ 
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: isVisible ? 1 : 0 
+                }}
               >
-                {/* <video
-                  src={service.file}
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  aria-hidden="true"
-                /> */}
-
                 <div className="video-wrapper">
                   <video
                     src={service.file}
@@ -169,12 +193,18 @@ function Services() {
                     playsInline
                     aria-hidden="true"
                     className={service.comingSoon ? "blurred-video" : ""}
+                    preload={offset === 0 ? "auto" : "metadata"}
+                    loading={offset === 0 ? "eager" : "lazy"}
                   />
                   {service.comingSoon && (
-                    <div className="coming-soon-overlay">Coming Soon</div>
+                    <div className="coming-soon-overlay">
+                      <span className="coming-soon-text">Coming Soon</span>
+                    </div>
                   )}
+                  <div className="service-overlay">
+                    <div className="service-number">{service.id}</div>
+                  </div>
                 </div>
-
               </div>
             );
           })}
@@ -184,21 +214,44 @@ function Services() {
           className="nav-arrow right"
           onClick={() => updateCarousel(currentIndex + 1)}
           aria-label="Next service"
+          disabled={isAnimating}
         >
-          ›
+          <span className="arrow-icon">›</span>
         </button>
       </div>
 
-
-
       <div className="service-info">
-        <div className="service-name" ref={serviceTitleRef}>
+        <div 
+          className="service-name" 
+          ref={serviceTitleRef}
+          style={{ 
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            opacity: 1,
+            transform: 'translateY(0)'
+          }}
+        >
           {services[currentIndex].title}
         </div>
-        <div ref={serviceSubheadingRef} className="service-subheading">
+        <div 
+          ref={serviceSubheadingRef} 
+          className="service-subheading"
+          style={{ 
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            opacity: 1,
+            transform: 'translateY(0)'
+          }}
+        >
           {services[currentIndex].subheading}
         </div>
-        <p className="service-description" ref={serviceDescRef}>
+        <p 
+          className="service-description" 
+          ref={serviceDescRef}
+          style={{ 
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            opacity: 1,
+            transform: 'translateY(0)'
+          }}
+        >
           {services[currentIndex].desc}
         </p>
       </div>

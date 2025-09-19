@@ -1,48 +1,81 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import HeroSection from './components/HeroSection/HeroSection';
-import Gallery from './components/Gallery/Gallery';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import Pricing from './components/Pricing/Pricing';
-import Services from './components/Services/Services';
 import ScrollToTop from './ScrollToTop';
-
+import Loading from './components/Loading/Loading';
+import PerformanceMonitor from './components/PerformanceMonitor/PerformanceMonitor';
 import "./main.css";
-import { Routes, Route } from 'react-router-dom';
-import ReviewSection from './components/Review/ReviewSection';
+
+// Lazy load components for better performance
+const Gallery = lazy(() => import('./components/Gallery/Gallery'));
+const About = lazy(() => import('./components/About/About'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+const Pricing = lazy(() => import('./components/Pricing/Pricing'));
+const Services = lazy(() => import('./components/Services/Services'));
+const ReviewSection = lazy(() => import('./components/Review/ReviewSection'));
 
 function HomePage() {
   return (
     <>
-    <section id="home">
-      <HeroSection />
-    </section>
+      <section id="home">
+        <HeroSection />
+      </section>
       <section id="services">
-        <Services />
+        <Suspense fallback={<Loading message="Loading services..." />}>
+          <Services />
+        </Suspense>
       </section>
-      <ReviewSection />
+      <Suspense fallback={<Loading message="Loading reviews..." />}>
+        <ReviewSection />
+      </Suspense>
       <section id="contact">
-        <Contact />
+        <Suspense fallback={<Loading message="Loading contact form..." />}>
+          <Contact />
+        </Suspense>
       </section>
-      <Footer />
+      <Suspense fallback={<Loading message="Loading footer..." />}>
+        <Footer />
+      </Suspense>
     </>
   )
 }
 
 function App() {
-
   return (
     <>
+      <PerformanceMonitor />
       <Navbar />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Gallery />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route 
+          path="/about" 
+          element={
+            <Suspense fallback={<Loading message="Loading about page..." />}>
+              <About />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/projects" 
+          element={
+            <Suspense fallback={<Loading message="Loading projects..." />}>
+              <Gallery />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/pricing" 
+          element={
+            <Suspense fallback={<Loading message="Loading pricing..." />}>
+              <Pricing />
+            </Suspense>
+          } 
+        />
       </Routes>
     </>
   )
