@@ -201,9 +201,6 @@ function Services() {
                       <span className="coming-soon-text">Coming Soon</span>
                     </div>
                   )}
-                  <div className="service-overlay">
-                    <div className="service-number">{service.id}</div>
-                  </div>
                 </div>
               </div>
             );
